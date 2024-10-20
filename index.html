@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="time">09:30</span>
+        </div>
+        <div class="icons">
+
+            <!-- Add a hidden file input for loading the text file -->
+            <input type="file" id="file-input" class="file-input" style="display: none;" accept=".txt">
+
+            <button class="icon-btn save-btn" onclick="generateTextFile()">
+                <img src="images/save.png" alt="Save item" class="icon">
+            </button>
+
+            <button class="icon-btn new-btn"><img src="images/cart.png" alt="View cart" class="icon"> </button>
+
+            <button class="icon-btn load-btn" onclick="loadShoppingList()">
+                <img src="images/load.png" alt="Load item" class="icon">
+            </button>
+        </div>
+        <div class="shops">
+            <button class="shop-btn" data-shop="lidl" onclick="selectShop(event)">Lidl</button>
+            <button class="shop-btn" data-shop="aldi" onclick="selectShop(event)">Aldi</button>
+            <button class="shop-btn" data-shop="asda" onclick="selectShop(event)">Asda</button>
+        </div>
+
+        <input type="text" id="item-input" class="item-input" placeholder="Enter item">
+        <button id="add-cart-btn" class="add-cart-btn">Add to Cart</button>
+        <div class="items-container">
+
+            <div class="items-container">
+            <div class="items" data-shop="lidl" id="lidl-items">
+                    <button class="item" onclick="toggleCrossedOut(this)">milk</button>
+                    <button class="item" onclick="toggleCrossedOut(this)">oranges</button>
+                    <button class="item" onclick="toggleCrossedOut(this)">butter</button>
+            </div>
+
+            <div class="items" data-shop="aldi" id="aldi-items">
+                <button class="item" onclick="toggleCrossedOut(this)">milk2</button>
+                <button class="item" onclick="toggleCrossedOut(this)">oranges2</button>
+                <button class="item" onclick="toggleCrossedOut(this)">butter2</button>
+            </div>
+
+            <div class="items" data-shop="asda" id="asda-items">
+                <button class="item" onclick="toggleCrossedOut(this)">milk3</button>
+                <button class="item" onclick="toggleCrossedOut(this)">oranges3</button>
+                <button class="item" onclick="toggleCrossedOut(this)">butter3</button>
+            </div>
+
+            </div>
+</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
