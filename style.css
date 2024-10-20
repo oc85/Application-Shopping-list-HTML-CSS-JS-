@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+.container {
+    width: 375px;
+    height: 667px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    margin: 20px auto;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0; /* Increased margin */
+    padding: 0 20px; /* Added padding */
+}
+
+.icon {
+    width: 70; /* Slightly reduced size */
+    height: 70px;
+    object-fit: contain; /* Ensures the entire image is visible */
+    padding: 5px; /* Added padding */
+    background-color: #f1f1f1; /* Optional: adds a light background */
+    border-radius: 50%; /* Optional: makes the background circular */
+    outline: none;
+    display: block;
+}
+
+.shops {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+    padding: 0 20px;
+    outline: none;
+}
+
+.shop-btn {
+    background-color: #d97673;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 16px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+
+
+.shop-btn:active {
+    transform: scale(0.95); /* Slight scale down effect when pressed */
+}
+
+
+
+.item-input,
+.add-cart-btn {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 10%;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* This ensures padding is included in the width */
+}
+
+.item-input {
+    border: 2px solid #ccc;
+    text-align: center;
+}
+
+.add-cart-btn {
+    background-color: #d97673;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.add-cart-btn:hover {
+    background-color: #c86461; /* Slightly darker shade for hover effect */
+}
+
+.items {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    display: none;
+}
+
+.items.active {
+    display: flex;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.item {
+    background-color: #f8f4e3;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.shop-btn:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+
+/*   double outlines */
+.shop-btn:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.icon-btn:focus, .save-btn:focus, .load-btn:focus, .new-btn:focus {
+    outline: none;
+}
+
+.save-btn, .load-btn, .new-btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.save-btn:hover, .load-btn:hover, .new-btn:hover {
+    opacity: 0.7;
+}
+
+
+.crossed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Additional styles for responsiveness and typography */
+@media (max-width: 375px) {
+    .container {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.crossed-out {
+    text-decoration: line-through;
+    color: #888; /* You can change the color as needed */
+}
+
+/* style responsible for scroll appearance */
+.items-container {
+    max-height: 200px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    padding-right: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shop-btn.active {
+    background-color: #c86461; /* Example active color */
+    transform: scale(0.95); /* Slightly indented to look pressed */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Inset shadow for pressed effect */
+}
+
